@@ -2,6 +2,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+@theme {
+  --color-purple-brand: #a855f7;
+  --color-indigo-brand: #6366f1;
+  --color-pink-brand:   #ec4899;
+  --color-blue-brand:   #3b82f6;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;

@@ -44,24 +44,77 @@ const Hero = () => {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            style={{ position: 'relative', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            style={{ position: 'relative', flexShrink: 0, width: '260px', height: '260px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
-            <div
-              style={{
-                position: 'absolute',
-                width: '200px',
-                height: '200px',
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(168,85,247,0.28) 0%, transparent 70%)',
-                filter: 'blur(24px)',
-              }}
-            />
+            {/* Wide outer glow */}
+            <div style={{
+              position: 'absolute', inset: '-30px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(139,92,246,0.28) 0%, rgba(99,102,241,0.12) 45%, transparent 70%)',
+              filter: 'blur(32px)',
+              pointerEvents: 'none',
+            }} />
+
+            {/* Mid pink accent glow */}
+            <div style={{
+              position: 'absolute', bottom: '-10px', left: '50%',
+              transform: 'translateX(-50%)',
+              width: '160px', height: '80px',
+              borderRadius: '50%',
+              background: 'radial-gradient(ellipse, rgba(236,72,153,0.20) 0%, transparent 70%)',
+              filter: 'blur(20px)',
+              pointerEvents: 'none',
+            }} />
+
+            {/* Dark circular backing plate (sits BEHIND the image) */}
+            <div style={{
+              position: 'absolute',
+              width: '230px', height: '230px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle at 40% 30%, rgba(109,40,217,0.22) 0%, rgba(10,10,25,0.80) 65%)',
+              border: '1px solid rgba(139,92,246,0.20)',
+              boxShadow: '0 0 0 1px rgba(139,92,246,0.10), inset 0 1px 0 rgba(255,255,255,0.05)',
+            }} />
+
+            {/* Orbiting accent dots */}
+            {[
+              { angle: 45,  r: 118, size: '8px',  color: '#8b5cf6', delay: 0 },
+              { angle: 160, r: 118, size: '6px',  color: '#6366f1', delay: 0.9 },
+              { angle: 285, r: 118, size: '7px',  color: '#ec4899', delay: 1.7 },
+            ].map((dot, i) => {
+              const rad = (dot.angle * Math.PI) / 180
+              return (
+                <motion.div
+                  key={i}
+                  animate={{ scale: [1, 1.5, 1], opacity: [0.6, 1, 0.6] }}
+                  transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut', delay: dot.delay }}
+                  style={{
+                    position: 'absolute',
+                    left: `calc(50% + ${Math.cos(rad) * dot.r}px - 4px)`,
+                    top:  `calc(50% + ${Math.sin(rad) * dot.r}px - 4px)`,
+                    width: dot.size, height: dot.size,
+                    borderRadius: '50%',
+                    background: dot.color,
+                    boxShadow: `0 0 10px 3px ${dot.color}88`,
+                  }}
+                />
+              )
+            })}
+
+            {/* Avatar image — floats on top of everything */}
             <motion.img
               src={avatar}
               alt="Avatar"
               animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              style={{ width: '180px', height: '180px', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', position: 'relative' }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+              style={{
+                position: 'relative',
+                width: '230px',
+                height: '230px',
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 6px 20px rgba(139,92,246,0.55)) drop-shadow(0 18px 40px rgba(0,0,0,0.55))',
+                zIndex: 1,
+              }}
             />
           </motion.div>
 

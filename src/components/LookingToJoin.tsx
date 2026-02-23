@@ -18,17 +18,18 @@ const socialIcons = [
 
 const LookingToJoin = () => {
   return (
-    <section style={{ padding: '80px 0', textAlign: 'center', position: 'relative' }}>
+    <section className="py-20 text-center relative">
       <div className="page-container">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          style={{ fontSize: '15px', color: 'rgba(255,255,255,0.65)', marginBottom: '20px', lineHeight: 1.8 }}
+          className="text-[15px] leading-[1.8] mb-5"
+          style={{ color: 'rgba(255,255,255,0.65)' }}
         >
           I'm currently looking to join a{' '}
-          <span style={{ color: '#4ade80', fontWeight: 600 }}>driven, functional</span>{' '}
+          <span className="text-green-400 font-semibold">driven, functional</span>{' '}
           team
           <br />
           that values amazing people doing things and accessible design
@@ -40,7 +41,7 @@ const LookingToJoin = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '18px', marginTop: '24px' }}
+          className="flex justify-center flex-wrap gap-[18px] mt-6"
         >
           {socialIcons.map(({ icon: Icon, color, label }, i) => (
             <motion.div
@@ -51,16 +52,8 @@ const LookingToJoin = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.04 }}
-              style={{
-                width: '40px', height: '40px',
-                borderRadius: '10px',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.08)',
-                cursor: 'pointer',
-                color,
-                fontSize: '18px',
-              }}
+              className="w-10 h-10 rounded-[10px] flex items-center justify-center bg-white/5 border border-white/[0.08] cursor-pointer text-[18px]"
+              style={{ color }}
             >
               <Icon />
             </motion.div>

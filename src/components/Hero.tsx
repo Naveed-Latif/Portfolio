@@ -1,0 +1,140 @@
+import { motion } from 'framer-motion'
+import { TypeAnimation } from 'react-type-animation'
+import { FaCode } from 'react-icons/fa'
+import avatar from '../assets/avatar.png'
+
+const Hero = () => {
+  return (
+    <section
+      id="home"
+      style={{
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        paddingTop: '64px',
+      }}
+    >
+      {/* BG glow */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'radial-gradient(ellipse 55% 55% at 50% 35%, rgba(124,58,237,0.18) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }}
+      />
+
+      <div className="page-container" style={{ paddingTop: '64px', paddingBottom: '64px' }}>
+
+        {/* ── Row 1: Avatar + Headline ─────────────────────── */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '48px',
+            marginBottom: '64px',
+            flexWrap: 'wrap',
+          }}
+        >
+          {/* Avatar */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            style={{ position: 'relative', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                width: '200px',
+                height: '200px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(168,85,247,0.28) 0%, transparent 70%)',
+                filter: 'blur(24px)',
+              }}
+            />
+            <motion.img
+              src={avatar}
+              alt="Avatar"
+              animate={{ y: [0, -12, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              style={{ width: '180px', height: '180px', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', position: 'relative' }}
+            />
+          </motion.div>
+
+          {/* Headline */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            style={{ flex: 1, minWidth: '260px' }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+              <div style={{ width: '24px', height: '1px', background: 'rgba(168,85,247,0.6)' }} />
+              <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
+                Hello! I Am{' '}
+                <span style={{ color: '#a855f7', fontWeight: 600 }}>Naveed Latif</span>
+              </p>
+            </div>
+            <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '8px' }}>
+              A Designer who
+            </p>
+            <h1 style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 800, lineHeight: 1.15, color: '#fff', marginBottom: '10px' }}>
+              Judges a book
+              <br />
+              by its{' '}
+              <span style={{ color: '#a855f7', fontStyle: 'italic', borderBottom: '3px solid #7c3aed', paddingBottom: '2px' }}>
+                cover
+              </span>
+              <span style={{ color: 'rgba(255,255,255,0.3)' }}>…</span>
+            </h1>
+            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.28)' }}>
+              Because if the cover does not impress you what else can?
+            </p>
+          </motion.div>
+        </div>
+
+        {/* ── Row 2: Role + Bio ──────────────────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+        >
+          <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 38px)', fontWeight: 700, color: '#fff', marginBottom: '12px' }}>
+            I'm a{' '}
+            <TypeAnimation
+              sequence={['Electrical Engineer.', 2200, 'UI/UX Designer.', 2200, 'Front-End Developer.', 2200]}
+              wrapper="span"
+              speed={55}
+              repeat={Infinity}
+              style={{ color: '#a855f7' }}
+            />
+          </h2>
+
+          <p style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginBottom: '20px', flexWrap: 'wrap' }}>
+            Currently, I'm a Front-end Developer at{' '}
+            <FaCode style={{ color: '#1877f2', flexShrink: 0 }} />
+            <a
+              href="#"
+              style={{ color: '#a855f7', fontWeight: 600, textDecoration: 'none' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#60a5fa')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#a855f7')}
+            >
+              Riemann Systems
+            </a>
+            ,
+          </p>
+
+          <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'rgba(255,255,255,0.55)', maxWidth: '520px' }}>
+            A self-taught UI/UX designer, functioning in the industry for 3+ years now. I make meaningful and delightful digital products that create an equilibrium between user needs and business goals.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+export default Hero

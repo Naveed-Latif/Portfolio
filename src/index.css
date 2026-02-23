@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0a0818 0%, #0f0d24 50%, #0a0818 100%);
+  color: #ffffff;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ─── Shared page container ─────────────────────────────── */
+.page-container {
+  width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* ─── Section spacing ────────────────────────────────────── */
+.section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  position: relative;
+}
+
+/* ─── Glassmorphism card ─────────────────────────────────── */
+.card-glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-glass:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 28px rgba(124, 58, 237, 0.18);
+}
+
+/* ─── Text gradient ──────────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #a855f7, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0818; }
+::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 3px; }
+
+/* ─── Skill chip ─────────────────────────────────────────── */
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #c4b5fd;
+  cursor: default;
+  transition: transform 0.2s ease;
+}
+
+.skill-chip:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* ─── Action button ──────────────────────────────────────── */
+.btn-purple {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border-radius: 8px;
+  background: rgba(124, 58, 237, 0.22);
+  border: 1px solid rgba(168, 85, 247, 0.38);
+  color: #c4b5fd;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-purple:hover {
+  transform: scale(1.05);
+  background: rgba(124, 58, 237, 0.35);
+}

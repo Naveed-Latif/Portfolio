@@ -28,11 +28,11 @@ const LookingToJoin = () => {
           className="text-[15px] leading-[1.8] mb-5"
           style={{ color: 'rgba(255,255,255,0.65)' }}
         >
-          I'm currently looking to join a{' '}
-          <span className="text-green-400 font-semibold">driven, functional</span>{' '}
-          team
+          Exploring the web with{' '}
+          <span className="text-green-400 font-semibold">creative logic</span>{' '}
+          and
           <br />
-          that values amazing people doing things and accessible design
+          building products that feel as good as they function.
         </motion.p>
 
         {/* Coloured tech/social icon strip */}

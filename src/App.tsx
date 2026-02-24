@@ -1,9 +1,11 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import About from './components/About'
 import WorkExperience from './components/WorkExperience'
 import LookingToJoin from './components/LookingToJoin'
 import BrandShowcase from './components/BrandShowcase'
 import FeaturedProjects from './components/FeaturedProjects'
+import Lab from './components/Lab'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -12,22 +14,28 @@ function App() {
     <div style={{ minHeight: '100vh' }}>
       <Navbar />
       <main>
-        {/* 1. Hero — avatar + headline + typing role */}
+        {/* 1. Hero */}
         <Hero />
 
-        {/* 2. Work Experience — 2×2 cards */}
+        {/* 2. About */}
+        <About />
+
+        {/* 3. Work Experience */}
         <WorkExperience />
 
-        {/* 3. "Looking to join a team" — text + icon row */}
+        {/* 4. Looking to Join */}
         <LookingToJoin />
 
-        {/* 4. Brand Showcase — orbital logo centrepiece */}
+        {/* 5. Brand Showcase */}
         <BrandShowcase />
 
-        {/* 5. Featured Projects — alternating layout */}
+        {/* 6. Featured Projects */}
         <FeaturedProjects />
 
-        {/* 6. Contact */}
+        {/* 7. Lab */}
+        <Lab />
+
+        {/* 8. Contact */}
         <Contact />
       </main>
       <Footer />

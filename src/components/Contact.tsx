@@ -7,7 +7,12 @@ const Contact = () => {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section id="contact" className="py-20 pb-15">
+    <section id="contact"  style={{
+      marginBottom: '20px',
+      paddingTop: '20px',
+      paddingBottom: '20px',
+
+    }}>
       <div ref={ref} className="page-container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

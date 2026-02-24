@@ -2,10 +2,10 @@ import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaTwitter, FaDribbble } from 'react-icons/fa'
 
 const socials = [
-  { icon: FaGithub,   href: '#', label: 'GitHub'   },
-  { icon: FaLinkedin, href: '#', label: 'LinkedIn'  },
-  { icon: FaTwitter,  href: '#', label: 'Twitter'   },
-  { icon: FaDribbble, href: '#', label: 'Dribbble'  },
+  { icon: FaGithub,   href: 'https://github.com/Naveed-Latif', label: 'GitHub'   },
+  { icon: FaLinkedin, href: 'https://www.linkedin.com/in/naveed-latif', label: 'LinkedIn'  },
+  { icon: FaTwitter,  href: 'https://twitter.com/NaveedLatif', label: 'Twitter'   },
+  { icon: FaDribbble, href: 'https://dribbble.com/NaveedLatif', label: 'Dribbble'  },
 ]
 
 const Footer = () => (
@@ -26,7 +26,7 @@ const Footer = () => (
 
       {/* Copyright */}
       <p className="text-xs text-white/30">
-        © {new Date().getFullYear()} Your Name · Crafted with ♥
+        © {new Date().getFullYear()} Naveed Latif· Crafted with ♥
       </p>
 
       {/* Socials */}
@@ -35,6 +35,7 @@ const Footer = () => (
           <motion.a
             key={label}
             href={href}
+            target='_blank'
             aria-label={label}
             whileHover={{ scale: 1.2, y: -2 }}
             whileTap={{ scale: 0.9 }}

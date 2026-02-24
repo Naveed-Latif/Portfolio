@@ -171,7 +171,7 @@ const Hero = () => {
             className="text-sm leading-[1.75] max-w-[520px]"
             style={{ color: 'rgba(255,255,255,0.55)' }}
           >
-            A self-taught UI/UX designer, functioning in the industry for 3+ years now. I make meaningful and delightful digital products that create an equilibrium between user needs and business goals.
+            A self-driven web developer with hands-on experience building full-stack applications. I design and develop intuitive digital experiences that merge functionality, performance, and thoughtful design.
           </p>
         </motion.div>
       </div>
